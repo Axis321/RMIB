@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101c20" /><title>RMIB · Vitals station</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="demo-body vitals-demo">
+  <header class="demo-topbar"><a class="demo-brand" href="index.html"><span class="demo-brand-icon">R</span><span>RMIB <small>CARE ROBOT</small></span></a><nav><a href="index.html">Room vision</a><a class="active" href="vitals.html">Vitals station</a></nav><span class="demo-connection"><i></i> SYSTEM ONLINE <small>DEMO</small></span></header>
+  <main class="demo-shell vitals-shell">
+    <section class="demo-intro"><div><div class="demo-eyebrow"><span class="demo-pip"></span> CARE STATION / 02</div><h1>Vitals at a<br><em>glance.</em></h1><p>Explore a simulated bedside monitor for patients and clinicians. Change the demo measurements, view a pulse waveform, and switch between patient-friendly and clinical layouts.</p></div><a href="index.html" class="back-vision-link">← <span>ROOM VISION</span></a></section>
+    <section class="monitor-demo-grid">
+      <div class="monitor-bezel"><div class="monitor-content">
+        <div class="monitor-toolbar"><div class="monitor-wordmark"><span>R</span><b>RMIB CARE STATION</b></div><div class="monitor-room">WARD A <i>•</i> ROOM 04</div><div class="monitor-live"><i></i> SIMULATED</div></div>
+        <div class="monitor-welcome"><div><small id="greeting-label">PATIENT DISPLAY</small><b id="greeting">Good morning, Alex</b><span id="status-copy">Your readings are ready to view.</span></div><div class="monitor-clock" id="clock">09:41</div></div>
+        <div class="monitor-vitals-grid">
+          <article class="monitor-metric pulse-metric"><div class="metric-top"><span class="metric-symbol">♥</span><span>PULSE <small>bpm</small></span><i class="metric-state">●</i></div><div class="metric-reading"><strong id="pulse-reading">72</strong><span>beats / min</span></div><svg viewBox="0 0 400 85" preserveAspectRatio="none" class="ecg-wave" aria-label="Simulated pulse waveform"><path id="wave-path" d="M0 45 L45 45 L56 40 L65 50 L76 45 L112 45 L127 43 L139 47 L152 45 L183 45 L197 20 L208 70 L220 36 L231 45 L272 45 L285 42 L298 49 L309 45 L350 45 L364 43 L376 47 L400 45"/></svg><div class="metric-bottom"><span>Latest sample</span><span class="normal-label">● Demo range</span></div></article>
+          <article class="monitor-metric temp-metric"><div class="metric-top"><span class="metric-symbol">◉</span><span>TEMPERATURE <small>°C</small></span><i class="metric-state">●</i></div><div class="metric-reading"><strong id="temperature-reading">36.8</strong><span>body temperature</span></div><div class="temp-scale"><div class="temp-fill"></div><span id="temp-indicator"></span><div class="scale-labels"><small>35.0°</small><small>37.0°</small><small>40.0°</small></div></div><div class="metric-bottom"><span>Latest sample</span><span class="normal-label">● Demo range</span></div></article>
+          <article class="monitor-metric bp-metric"><div class="metric-top"><span class="metric-symbol">↗</span><span>BLOOD PRESSURE <small>mmHg</small></span><i class="metric-state">●</i></div><div class="bp-big"><strong id="blood-pressure">118<span>/</span>76</strong><div><small>SYS</small><small>DIA</small></div></div><div class="bp-chart" aria-label="Illustrative blood pressure trend"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-bottom"><span>Most recent measurement</span><span class="normal-label">● Demo range</span></div></article>
+          <article class="monitor-metric oxygen-metric"><div class="metric-top"><span class="metric-symbol">⌁</span><span>OXYGEN <small>SpO₂</small></span><i class="metric-state">●</i></div><div class="metric-reading"><strong id="oxygen-reading">98</strong><span>% saturation</span></div><div class="oxygen-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="metric-bottom"><span>Optional sensor demo</span><span class="normal-label">● Simulated</span></div></article>
+        </div>
+        <div class="optional-demo-row"><div class="optional-head"><span>OPTIONAL SIGNALS</span><small>SELECT TO PREVIEW</small></div><div class="signal-buttons"><button class="signal-button active" data-signal="pulse">Pulse waveform <span>● ON</span></button><button class="signal-button" data-signal="ecg">ECG preview <span>○ OFF</span></button><button class="signal-button" data-signal="eeg">EEG preview <span>○ OFF</span></button></div><p id="signal-note">Waveforms are illustrative. ECG and EEG require compatible clinical equipment and clinician oversight.</p></div>
+        <div class="monitor-disclaimer">SIMULATED READINGS FOR INTERACTION ONLY <span>Not medical advice · No real patient data</span></div>
+      </div><div class="monitor-stand"><span></span></div></div>
+      <aside class="vitals-controls"><div class="control-card-title"><span class="control-spark">✳</span><div><b>Interact with the monitor</b><small>Adjust simulated values</small></div></div>
+        <div class="audience-switch"><span>DISPLAY MODE</span><div><button class="display-mode active" data-mode="patient">Patient</button><button class="display-mode" data-mode="clinical">Clinician</button></div></div>
+        <label class="measure-control"><span><b>Pulse</b><output id="pulse-output">72 bpm</output></span><input id="pulse-slider" type="range" min="48" max="130" value="72" aria-label="Adjust simulated pulse"></label>
+        <label class="measure-control"><span><b>Temperature</b><output id="temp-output">36.8 °C</output></span><input id="temp-slider" type="range" min="350" max="410" value="368" aria-label="Adjust simulated temperature"></label>
+        <label class="measure-control"><span><b>Systolic pressure</b><output id="sys-output">118 mmHg</output></span><input id="sys-slider" type="range" min="85" max="180" value="118" aria-label="Adjust simulated systolic blood pressure"></label>
+        <label class="measure-control"><span><b>Diastolic pressure</b><output id="dia-output">76 mmHg</output></span><input id="dia-slider" type="range" min="50" max="115" value="76" aria-label="Adjust simulated diastolic blood pressure"></label>
+        <label class="measure-control"><span><b>Oxygen saturation</b><output id="oxygen-output">98%</output></span><input id="oxygen-slider" type="range" min="80" max="100" value="98" aria-label="Adjust simulated oxygen saturation"></label>
+        <button id="reset-readings" class="reset-readings">↻ <span>Reset demo readings</span></button>
+        <div class="control-note"><b>For demonstration only.</b> These controls generate made-up values to show how a station interface could respond. A real product requires validated medical sensors, clinical review, and an appropriate regulatory pathway.</div>
+      </aside>
+    </section>
+    <section class="vitals-explain"><article><span>01 / PATIENT MODE</span><p>Large numbers and plain language make a quick glance easy to follow.</p></article><article><span>02 / CLINICIAN MODE</span><p>Units, timestamps, and optional signal views support a clinical conversation.</p></article><article><span>03 / REAL MEASUREMENTS</span><p>Only compatible, validated devices can supply actual measurements; the demo never connects to sensors.</p></article></section>
+    <footer class="demo-footer"><span>RMIB · VITALS STATION CONCEPT</span><span>All readings and waveforms are simulated.</span><a href="index.html">← BACK TO ROOM VISION</a></footer>
+  </main>
+  <script src="vitals.js"></script>
+</body>
+</html>
